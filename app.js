@@ -113,7 +113,7 @@ function attack (enemy)
 
         if (enemy.Hull <= 0)               // if enemy ship is destroyed
          {
-            enemyImg.classList.add('hit','dead','sink')
+            enemyImg.classList.add('dead','sink')
             
             
             updateEnemy(enemy)
@@ -124,7 +124,7 @@ function attack (enemy)
                 newBattle(aliens)
             }, '1000')
 
-            setTimeout(() => enemyImg.classList.remove('hit',), '1000')
+            
             setTimeout(() => enemyImg.classList.remove('dead',), '2000')
             
             setTimeout(() => enemyImg.classList.remove('sink',), '3000')
