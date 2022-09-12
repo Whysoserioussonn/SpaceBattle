@@ -1,0 +1,138 @@
+.bodyContainer{
+    display: flex;
+    justify-content: space-between;
+    height: 100vh;
+    width: 100vw;
+    margin: 0 auto;
+    font-family: 'Share Tech Mono', monospace;
+    background-size: 100%;
+    background-color: black;
+    background-image: url(images/spacebattle.jpg);
+    color: white;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.mainCharacterView{
+
+width: 50%;
+display: flex;
+flex-direction: column;
+justify-content: space-around;
+align-items: center;
+}
+
+.nameBox{
+    border: 1px solid black;
+    width: 25vw;
+    height: 10vh;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    box-shadow: 0px 0px 20px 10px white;
+    background-color: black;
+   
+
+}
+.playerImage{
+    border: 1px solidblack;
+    width: 30vw;
+    height: 40vh;
+    background-image: url("/images/space_hero.gif");
+    background-size: cover ;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-shadow: 0px 0px 20px 10px white;
+    
+
+    
+}
+.playerStats{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solidblack;
+    width: 15vw;
+    height: 15vh;
+    text-align: center;
+    font-size: 1.5em;
+    box-shadow: 0px 0px 20px 10px white;
+    border-radius: 2%;
+
+
+}
+.enemyImage{
+    border: 1px solidblack;
+    width: 30vw;
+    height: 40vh;
+    background-image: url("/images/enemy.gif");
+    background-size: cover ;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-shadow: 0px 0px 20px 10px white;
+    
+
+    
+}
+.enemyStats{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solidblack;
+    width: 15vw;
+    height: 15vh;
+    text-align: center;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 1.5em;
+    box-shadow: 0px 0px 20px 10px white;
+    background-color: black;
+
+}
+
+.hit {
+    position: relative;
+    animation: groovy;
+    animation-duration: .75s;
+   
+}
+
+  /* flashes colors when hit and still alive*/
+@keyframes groovy {
+0%   {background: red; }
+25%  {background: yellow;}
+50%  {background: blue; }
+75%  {background: green;}
+100% {background: red; }
+}
+
+  /*image turns grey*/
+.dead 
+{
+    -webkit-filter: grayscale(100%); 
+    filter: grayscale(100%);
+    
+}
+
+.sink 
+/* does a limp sink acation/
+{
+     position: relative;
+    animation: dance .75s 2;
+    animation-direction: alternate;
+   
+}
+
+@keyframes dance 
+{
+    0%   { left: 0px; top: 0px;}
+    25%  {left: 200px; top: 0px;}
+    50%  {left: 200px; top: 200px;}
+    75%  {left: 0px; top: 200px;}
+    100% { left: 0px; top: 0px;}
+
+}
+
