@@ -39,8 +39,9 @@ let aliens = [alien1, alien2, alien3, alien4, alien5, alien6];
 function startGame () 
 {
     alert(`MARS ATTACKS! YOU ARE BEING DRAFTED INTO YOUR OWN SPACESHIP WITH CREW ON HAND. YOUR SPECIAL PER SCHOLAS SKILLSET GIVES YOU THE RANK OF CAPTAIN OF THE SHIP! YOUR SHIP CREW TAKES THE FIRST SHOT!`)
-    battle(aliens)   
-}
+    updateEnemy(aliens[0])
+    attack(aliens[0])   
+} 
 
 
 // update enemy stats on DOM
@@ -53,17 +54,12 @@ function updatePlayer () {
     stats.innerHTML = `Hull: ${spaceship.Hull}<br> Firepower: ${spaceship.Firepower}<br> Accuracy: ${spaceship.Accuracy}<br>`
 }
 
-// target alien array of ships
-function battle (ships) {
-    
-    attack(ships[0])
-}
 
 // if any aliens are left after defeating enemy, 
 // ask player if they want to engage or retreat, 
 // if none left, game over, you win
 // reload() to reload current webpage(the game)
-function newBattle () 
+function battle () 
 {
 
     if (aliens.length != 0)
@@ -73,7 +69,7 @@ function newBattle ()
          {
             if (confirm('HERE COMES ANOTHER SHIP, DO YOU WANT TO ENGAGE?'))
              {
-                battle(aliens)
+                attack(aliens[0])
             }
              else
               {
@@ -121,7 +117,7 @@ function attack (enemy)
             setTimeout(() => {
                 alert(`GREAT SHOT! ENEMY'S HULL TOOK ${spaceship.Firepower} DAMAGE! TARGET SHIP DESTROYED!`) 
                 aliens.shift()
-                newBattle(aliens)
+                battle(aliens)
             }, '1000')
 
             
